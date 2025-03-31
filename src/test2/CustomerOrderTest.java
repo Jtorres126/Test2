@@ -20,6 +20,7 @@ public class CustomerOrderTest {
         inventory.addItem("Cheese Pizza", 8);
         inventory.addItem("Garlic Bread", 15);
     }
+
     @Test
 	public void testPlaceOrder() {
 	    order.addItem("Pepperoni Pizza", 12.50);
@@ -44,7 +45,7 @@ public class CustomerOrderTest {
 	    assertEquals(9, inventory.getItemStock("Pepperoni Pizza"));
 	}
 
-
+  
     @Test
 	public void testLowStockAlert() {
 	    inventory.updateStock("Garlic Bread", 13);  // Only 2 left after this
