@@ -30,10 +30,15 @@ public class CustomerOrderTest {
 	}
 
 
-    // ToDo: Test paying for the order
- 	// Add an item to the order, pay using a method, and verify that the order is marked as paid.
+    @Test
+	public void testPayOrder() {
+	    order.addItem("Cheese Pizza", 10.00);
+	    order.pay("Credit Card");
+	    assertTrue(order.isPaid());
+	    assertEquals(10.00, order.getTotalAmount(), 0.01);
+	}
      
-@Test
+    @Test
     public void testInventoryUpdate() {
 	    order.addItem("Pepperoni Pizza", 12.50);
 	    inventory.updateStock("Pepperoni Pizza", 1);
